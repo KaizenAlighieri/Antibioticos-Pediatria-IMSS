@@ -986,7 +986,7 @@
                 <div class="flex items-start gap-3">
                     <div class="bg-blue-100 text-blue-600 p-3 rounded-full shrink-0 shadow-sm w-10 h-10 flex items-center justify-center"><i class="fa-solid fa-robot"></i></div>
                     <div class="bg-white border border-slate-200 p-4 md:p-5 rounded-2xl rounded-tl-none shadow-sm text-slate-700 max-w-[85%] md:max-w-[75%] leading-relaxed">
-                        <p>Hola, colega. Soy tu asistente experto en infectología pediátrica. Conozco detalladamente la farmacología de neonatos y lactantes en México, las restricciones por edad (como Kernicterus o Bebé Gris), y las claves del IMSS.</p>
+                        <p>Soy tu asistente experto en infectología pediátrica. Conozco detalladamente la farmacología de neonatos y lactantes en México, las restricciones por edad (como Kernicterus o Bebé Gris), y las claves del IMSS.</p>
                         <p class="mt-3 font-semibold text-blue-900">¿Qué caso clínico o duda farmacológica analizamos hoy?</p>
                     </div>
                 </div>
@@ -1103,7 +1103,7 @@
 
             const systemInstruction = `Eres un experto infectólogo pediatra adscrito al IMSS en México. Respondes SOLO sobre neonatos y lactantes. Limítate al Cuadro Básico IMSS. Advierte severamente sobre riesgos de Bebé Gris, Kernicterus y artropatía. Estructura tus respuestas con viñetas, negritas y párrafos legibles (Markdown).`;
             chatHistory.push(`Usuario: ${text}`);
-            const prompt = `Historial:\n${chatHistory.slice(-3).join('\n')}\n\nResponde como el experto del IMSS.`;
+            const prompt = `Historial:\n${chatHistory.slice(-3).join('\n')}\n\nResponde como el experto del IMSS. Sin presentarte como experto, sino como asistente basado en la bibliografía expuesta`;
 
             const aiResponse = await callGeminiAPI(prompt, systemInstruction);
             chatHistory.push(`IA: ${aiResponse}`);
@@ -1531,4 +1531,5 @@
         }
     </script>
 </body>
+
 </html>
